@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Collapse,
   Navbar,
@@ -6,9 +6,10 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink } from 'reactstrap';
-import CartSummary from './CartSummary';
-import { Link } from 'react-router-dom';
+  NavLink,
+} from "reactstrap";
+import CartSummary from "./CartSummary";
+import { Link } from "react-router-dom";
 
 export default class Navi extends React.Component {
   constructor(props) {
@@ -16,12 +17,12 @@ export default class Navi extends React.Component {
 
     this.toggle = this.toggle.bind(this);
     this.state = {
-      isOpen: false
+      isOpen: false,
     };
   }
   toggle() {
     this.setState({
-      isOpen: !this.state.isOpen
+      isOpen: !this.state.isOpen,
     });
   }
   render() {
@@ -33,12 +34,19 @@ export default class Navi extends React.Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ms-auto" navbar>
               <NavItem>
-                <Link to="/form1">Form 1</Link>
+                <NavLink>
+                  <Link to="/form1">Form 1</Link>
+                </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+                <NavLink>
+                  <Link to="/form2">Form 2</Link>
+                </NavLink>
               </NavItem>
-             <CartSummary removeFromCart={this.props.removeFromCart} cart={this.props.cart}/>
+              <CartSummary
+                removeFromCart={this.props.removeFromCart}
+                cart={this.props.cart}
+              />
               {/* cart yolladık çünkü component drilling lazım */}
             </Nav>
           </Collapse>

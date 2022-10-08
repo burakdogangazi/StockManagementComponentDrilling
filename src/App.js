@@ -9,6 +9,7 @@ import { Route, Routes } from "react-router-dom";
 import NotFound from "./NotFound";
 import CartList from "./CartList";
 import FormDemo1 from "./FormDemo1";
+import FormDemo2 from "./FormDemo2";
 export default class App extends Component {
   //Bizim yaptığımız projede categorylist üzerinden seçilen ürün kategorisinin
   // product liste geçmesini ve listelenmesini istiyoruz
@@ -113,7 +114,7 @@ export default class App extends Component {
                   }
                 />
                 <Route path="/form1" element={<FormDemo1 />} />
-
+                <Route path="/form2" element={<FormDemo2 />} />
                 <Route element={<NotFound />} />
                 {/* routes tek tek gezer en üstten aşağı exact ile
                 tam yol varsa olur yoksa en altta not found kullanılır */}
